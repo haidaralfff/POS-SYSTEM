@@ -14,11 +14,11 @@ Sistem POS sederhana berbasis **Laravel 11**, dikembangkan berdasarkan analisis 
 
 ## ✨ Fitur Utama
 
-* Login dengan role (Owner, Kasir, Gudang)
-* Manajemen barang & stok
-* Transaksi penjualan + cetak struk
-* Pencatatan barang masuk
-* Laporan penjualan & stok
+* Login dengan dua role: **Owner** & **Kasir**
+* Transaksi penjualan penuh oleh Kasir (input barang → hitung total → pembayaran → struk)
+* Update stok otomatis berdasarkan transaksi
+* Owner dapat melihat laporan keuangan & laporan stok
+* Manajemen barang sederhana (tanpa modul gudang online)
 
 ---
 
@@ -35,20 +35,21 @@ Sistem POS sederhana berbasis **Laravel 11**, dikembangkan berdasarkan analisis 
 
 ### **Login** → Validasi → Akses sesuai role
 
-### **Transaksi Penjualan** → Input barang → Hitung total → Cetak struk → Update stok
+### **Kasir:** Input barang → Hitung total → Pembayaran → Cetak struk → Update stok
 
-### **Barang Masuk** → Cek stok → Restock → Update data
+### **Owner:** Melihat laporan keuangan & laporan stok
 
-### **Laporan** → Ambil data transaksi → Generate laporan
+> **Gudang bersifat offline**, tidak diintegrasikan ke dalam sistem.
 
 ---
 
 ## 🗃️ Data Utama Sistem
 
-* **User:** ID, username, password, role
+* **User:** ID, username, password, role (Owner/Kasir)
 * **Barang:** ID, nama, harga, stok, kategori
 * **Transaksi:** ID, kasir, tanggal, total, detail barang
-* **Barang Masuk:** ID, barang, jumlah, tanggal, petugas
+
+> Modul barang masuk (gudang) tidak disimpan karena prosesnya **offline**.
 
 ---
 
@@ -93,20 +94,9 @@ Fork → buat branch → commit → pull request
 
 MIT License
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
