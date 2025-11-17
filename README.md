@@ -1,3 +1,113 @@
+# Laravel POS (Point of Sale)
+
+## 👥 Kelompok 7
+
+1. Muhammad Nuur Fathan (240202840)
+2. Haidar Habibi Al Farisi (240202862)
+3. Hanifah (240202864)
+4. Alvira Libra Ramadhani (240202851)
+5. Amelia Putri Azzahra (240202853)
+
+Sistem POS sederhana berbasis **Laravel 11**, dikembangkan berdasarkan analisis RPL meliputi kebutuhan user, alur proses, dan use case. Cocok untuk kasir, owner, dan gudang.
+
+---
+
+## ✨ Fitur Utama
+
+* Login dengan role (Owner, Kasir, Gudang)
+* Manajemen barang & stok
+* Transaksi penjualan + cetak struk
+* Pencatatan barang masuk
+* Laporan penjualan & stok
+
+---
+
+## 🎭 Aktor Utama
+
+* **Owner** – Mengecek laporan keuangan & laporan stok
+* **Kasir** – Melakukan seluruh proses transaksi & pembayaran
+
+> **Catatan:** Fungsi **Gudang tidak online** (dikelola secara offline), sehingga tidak termasuk dalam sistem.
+
+---
+
+## 🔄 Ringkasan Proses Sistem
+
+### **Login** → Validasi → Akses sesuai role
+
+### **Transaksi Penjualan** → Input barang → Hitung total → Cetak struk → Update stok
+
+### **Barang Masuk** → Cek stok → Restock → Update data
+
+### **Laporan** → Ambil data transaksi → Generate laporan
+
+---
+
+## 🗃️ Data Utama Sistem
+
+* **User:** ID, username, password, role
+* **Barang:** ID, nama, harga, stok, kategori
+* **Transaksi:** ID, kasir, tanggal, total, detail barang
+* **Barang Masuk:** ID, barang, jumlah, tanggal, petugas
+
+---
+
+## 🧰 Teknologi
+
+* Laravel 11
+* PHP 8.2+
+* MySQL/MariaDB
+* Composer & Node.js
+
+---
+
+## 🚀 Instalasi Singkat
+
+```
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+npm run dev
+```
+
+---
+
+## ▶️ Contoh Penggunaan
+
+* **Owner:** buka laporan
+* **Kasir:** proses transaksi, cetak struk
+* **Gudang:** input barang masuk, update stok
+
+---
+
+## 🤝 Kontribusi
+
+Fork → buat branch → commit → pull request
+
+---
+
+## 📄 Lisensi
+
+MIT License
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
