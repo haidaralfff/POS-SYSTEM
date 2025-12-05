@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            //kasir atau owner default
+            $table->string('role')->default('kasir'); // atau 'owner'
         });
     }
 
@@ -22,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            //set role column
+            $table->dropColumn('role');
         });
     }
 };
